@@ -9,7 +9,7 @@ app.use(express.static('public'))
 
 const greetings = {
     'english' : "Hello",
-    
+
 } 
 app.get('/api/greet', function(req, res){
     const username = req.query.username;
@@ -44,7 +44,7 @@ app.post('/api/greet', function(res,req){
     res.json({message: `Hello ${username}`
 })
  }); */
-const PORT = 4009;
+const PORT = process.env.PORT || 4009;
 
 app.listen(PORT, function(){
    console.log("App is restarting by itself on "+PORT)
